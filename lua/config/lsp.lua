@@ -13,19 +13,53 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 end
 
--- Example: Lua language server
-lspconfig.lua_ls.setup({
+-- Clangd setup for C/C++
+lspconfig.clangd.setup({
   on_attach = on_attach,
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
+  cmd = { "clangd" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_dir = lspconfig.util.root_pattern(
+    '.clangd',
+    '.clang-tidy',
+    '.clang-format',
+    'compile_commands.json',
+    'compile_flags.txt',
+    'configure.ac',
+    '.git'
+  ),
   settings = {
-    Lua = {
-      diagnostics = { globals = { "vim" } },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
+    clangd = {
+      arguments = {
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--fallback-style=llvm",
       },
     },
   },
 })
 
--- Add more LSP servers as needed
--- lspconfig.clangd.setup({ on_attach = on_attach })
--- lspconfig.pyright.setup({ on_attach = on_attach })
+-- More conservative Lua LSP setup (to avoid the 100% CPU issue)
+lspconfig.lua_ls.setup({
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+        disable = { "missing-fields" }
+      },
+      workspace = {
+        checkThirdParty = false,
+        -- Don't load all nvim runtime files to avoid performance issues
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+        },
+      },
+      telemetry = { enable = false },
+    },
+  },
+})
