@@ -1,0 +1,12 @@
+local opt = vim.opt
+opt.number = true
+opt.relativenumber = true
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.termguicolors = true
+opt.scrolloff = 4
+opt.clipboard = "unnamedplus"
+opt.signcolumn = "yes"
+opt.updatetime = 300
+opt.timeoutlen = 300
