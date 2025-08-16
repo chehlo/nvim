@@ -63,3 +63,40 @@ lspconfig.lua_ls.setup({
     },
   },
 })
+
+-- TypeScript/JavaScript (using ts_ls instead of deprecated tsserver)
+lspconfig.ts_ls.setup({
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+  settings = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+  },
+})
+
+-- JSON
+lspconfig.jsonls.setup({
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
+-- HTML
+lspconfig.html.setup({
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
+-- CSS
+lspconfig.cssls.setup({
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})

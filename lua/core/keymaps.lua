@@ -24,3 +24,11 @@ map("n", "<leader>ce", ":cs find e <C-R>=expand('<cword>')<CR><CR>", { desc = "F
 map("n", "<leader>cf", ":cs find f <C-R>=expand('<cfile>')<CR><CR>", { desc = "Find file" })
 map("n", "<leader>ci", ":cs find i <C-R>=expand('<cfile>')<CR><CR>", { desc = "Find files #including" })
 map("n", "<leader>cd", ":cs find d <C-R>=expand('<cword>')<CR><CR>", { desc = "Find functions called by" })
+
+-- Web development keymaps
+map("n", "<leader>mp", ":Prettier<CR>", { desc = "Format with Prettier" })
+map("n", "<leader>el", ":EslintFixAll<CR>", { desc = "ESLint fix all" })
+map("n", "<leader>nt", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+map("n", "<leader>nf", ":NvimTreeFocus<CR>", { desc = "Focus NvimTree" })
+map("n", "<leader>dt", ":DBUIToggle<CR>", { desc = "Toggle Database UI" })
+map("n", "<leader>dd", ":DBUIFindBuffer<CR>", { desc = "Find DB buffer" })
