@@ -47,7 +47,7 @@ end
 -- Custom keymaps for manual Copilot control
 vim.keymap.set('i', '<F2>', trigger_copilot, { desc = "Trigger Copilot suggestion" })
 vim.keymap.set('n', '<F2>', trigger_copilot, { desc = "Trigger Copilot suggestion" })
-vim.keymap.set('n', '<leader>cp', ':Copilot panel<CR>', { desc = "Open Copilot panel" })
-vim.keymap.set('n', '<leader>ce', ':Copilot enable<CR>', { desc = "Enable Copilot" })
-vim.keymap.set('n', '<leader>cd', ':Copilot disable<CR>', { desc = "Disable Copilot" })
-vim.keymap.set('n', '<leader>cs', ':Copilot status<CR>', { desc = "Copilot status" })
+vim.keymap.set('n', '<leader>cpp', ':Copilot panel<CR>', { desc = "Open Copilot panel" })
+vim.keymap.set('n', '<leader>cpe', ':Copilot enable<CR>', { desc = "Enable Copilot" })
+vim.keymap.set('n', '<leader>cpd', ':Copilot disable<CR>', { desc = "Disable Copilot" })
+vim.keymap.set('n', '<leader>cps', ':Copilot status<CR>', { desc = "Copilot status" })
