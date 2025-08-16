@@ -11,4 +11,8 @@ end
 -- Add a command to rebuild cscope
 vim.api.nvim_create_user_command("CscopeBuild", M.build_cscope, {})
 
+-- Load keymap-checker
+M.keymap_checker = require("keymap-checker")
+M.keymap_checker.setup()
+
 return M

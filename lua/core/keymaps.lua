@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-vim.g.mapleader = " "
+vim.g.mapleader = "\\"
 
 -- Basic keymaps
 map("n", "<leader>w", ":w<CR>", { desc = "Save file" })
