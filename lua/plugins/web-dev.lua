@@ -48,23 +48,6 @@ return {
     cmd = { "DBUI", "DB", "DBUIToggle" },
   },
 
-  -- Git integration
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("gitsigns").setup({
-        signs = {
-          add = { text = "+" },
-          change = { text = "~" },
-          delete = { text = "_" },
-          topdelete = { text = "‾" },
-          changedelete = { text = "~" },
-        },
-      })
-    end,
-  },
-
   -- File explorer
   {
     "nvim-tree/nvim-tree.lua",

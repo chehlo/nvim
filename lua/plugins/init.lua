@@ -44,4 +44,5 @@ return {
     config = function() require("config.telescope") end,
   },
   require("plugins.web-dev"),
+  require("plugins.git"),
 }

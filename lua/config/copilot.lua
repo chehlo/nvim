@@ -8,7 +8,7 @@ require("copilot").setup({
       accept_line = "<C-l>",
       next = "<C-]>",
       prev = "<C-[>",
-      dismiss = "<C-e>",
+      dismiss = "<Esc>",
     },
   },
   panel = {

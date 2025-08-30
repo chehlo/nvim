@@ -34,7 +34,7 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 | `<C-y>` | Accept suggestion |
 | `<C-w>` | Accept word |
 | `<C-l>` | Accept line |
-| `<C-e>` | Dismiss |
+| `<ESC>` | Dismiss |
 | `\cpe/\cpd/\cps` | Enable/Disable/Status |
 
 ### Navigation
@@ -53,6 +53,17 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 | `\cs` | Find symbol |
 | `\cc` | Find callers |
 | `\ct` | Find text |
+
+### Git
+| Key      | Action |
+|----------|--------|
+| `\gs`    | **Open Neogit (git status)** |
+| `\<F12>` | Toggle git signs |
+| `]c `    | Next hunk |
+| `[c`     | Prev hunk |
+| `\gp`    | Preview git hunk| 
+| `\gr`    | Reset git hunk | 
+| `\gb`    | Git blame line |
 
 ### Code
 | Key | Action |
@@ -83,6 +94,7 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 - **Web:** TypeScript, HTML, CSS, JSON
 - **Formatting:** Prettier, ESLint via conform.nvim
 - **Database:** SQL with vim-dadbod
+- **Git:** Neogit interface + gitsigns indicators
 
 ## Structure
 
