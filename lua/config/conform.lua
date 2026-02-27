@@ -10,6 +10,8 @@ require("conform").setup({
     markdown = { "prettier" },
     yaml = { "prettier" },
     sql = { "sql_formatter" },
+    rust = { "rustfmt" },
+    toml = { "taplo" },
   },
   format_on_save = false, -- We'll format manually with keymap
 })

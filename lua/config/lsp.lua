@@ -100,3 +100,9 @@ lspconfig.cssls.setup({
   on_attach = on_attach,
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
+
+-- TOML (for Cargo.toml and other TOML files)
+lspconfig.taplo.setup({
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})

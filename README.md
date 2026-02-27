@@ -1,6 +1,6 @@
 # Neovim Configuration
 
-Modern Neovim setup for C/C++ and web development.
+Modern Neovim setup for C/C++, Rust, and web development.
 
 ## Install
 ```bash
@@ -54,6 +54,35 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 | `\cc` | Find callers |
 | `\ct` | Find text |
 
+### Rust
+| Key | Action |
+|-----|--------|
+| `\rr` | **Run runnables** (tests, binaries) |
+| `\rd` | Run debuggables |
+| `\re` | Expand macro |
+| `\rc` | Open Cargo.toml |
+| `\rp` | Parent module |
+| `\ra` | Rust code actions |
+
+### Cargo.toml
+| Key | Action |
+|-----|--------|
+| `\Ct` | Toggle crate info |
+| `\Cu` | Update crate |
+| `\Ca` | Update all crates |
+| `\Cf` | Show features |
+| `\Cv` | Show versions |
+| `\Cd` | Open crate docs |
+
+### LSP Browsing (all languages)
+| Key | Action |
+|-----|--------|
+| `\ls` | **Document symbols** |
+| `\lS` | Workspace symbols |
+| `\lr` | References |
+| `\li` | Implementations |
+| `\ld` | Diagnostics |
+
 ### Git
 | Key      | Action |
 |----------|--------|
@@ -91,10 +120,18 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 ## Language Support
 
 - **C/C++:** clangd + Cscope
+- **Rust:** rust-analyzer via rustaceanvim + crates.nvim
 - **Web:** TypeScript, HTML, CSS, JSON
-- **Formatting:** Prettier, ESLint via conform.nvim
+- **TOML:** taplo LSP (Cargo.toml, etc.)
+- **Formatting:** Prettier, rustfmt, taplo via conform.nvim
 - **Database:** SQL with vim-dadbod
 - **Git:** Neogit interface + gitsigns indicators
+
+### Rust Prerequisites
+```bash
+rustup component add rust-analyzer rustfmt clippy
+cargo install taplo-cli
+```
 
 ## Structure
 

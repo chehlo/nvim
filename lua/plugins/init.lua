@@ -45,4 +45,5 @@ return {
   },
   require("plugins.web-dev"),
   require("plugins.git"),
+  require("plugins.rust"),
 }
