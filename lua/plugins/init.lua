@@ -3,13 +3,19 @@ return {
 
   {
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    cmd = { "Copilot" },
+    keys = {
+      { "<leader>cpe", "<cmd>Copilot enable<CR>", desc = "Enable Copilot" },
+      { "<leader>cpd", "<cmd>Copilot disable<CR>", desc = "Disable Copilot" },
+      { "<leader>cps", "<cmd>Copilot status<CR>", desc = "Copilot status" },
+    },
     config = function() require("config.copilot") end,
   },
 
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
     config = function() require("config.lsp") end,
   },
 

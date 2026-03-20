@@ -1,7 +1,7 @@
 require("copilot").setup({
   suggestion = {
     enabled = true,
-    auto_trigger = false, -- Disable auto-trigger
+    auto_trigger = false, -- Suggestions only on demand (F2)
     keymap = {
       accept = "<C-y>",
       accept_word = "<C-w>",
@@ -44,10 +44,7 @@ local function trigger_copilot()
   require('copilot.suggestion').next()
 end
 
--- Custom keymaps for manual Copilot control
+-- Keymaps set after plugin loads (enable/disable/status are in plugin spec keys)
 vim.keymap.set('i', '<F2>', trigger_copilot, { desc = "Trigger Copilot suggestion" })
 vim.keymap.set('n', '<F2>', trigger_copilot, { desc = "Trigger Copilot suggestion" })
 vim.keymap.set('n', '<leader>cpp', ':Copilot panel<CR>', { desc = "Open Copilot panel" })
-vim.keymap.set('n', '<leader>cpe', ':Copilot enable<CR>', { desc = "Enable Copilot" })
-vim.keymap.set('n', '<leader>cpd', ':Copilot disable<CR>', { desc = "Disable Copilot" })
-vim.keymap.set('n', '<leader>cps', ':Copilot status<CR>', { desc = "Copilot status" })

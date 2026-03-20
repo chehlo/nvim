@@ -34,7 +34,8 @@ vim.g.rustaceanvim = {
         cargo = {
           allFeatures = true,
         },
-        checkOnSave = {
+        checkOnSave = true,
+        check = {
           command = "clippy",
         },
         inlayHints = {

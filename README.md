@@ -27,15 +27,16 @@ export XDG_STATE_HOME=$NVIM_ROOT/state
 | `\q` | Quit |
 | `<C-h/j/k/l>` | Window navigation |
 
-### AI (Copilot)
+### AI (Copilot) — disabled by default
 | Key | Action |
 |-----|--------|
-| `<F2>` | **Trigger suggestions** |
+| `\cpe` | **Enable Copilot** (loads plugin on demand) |
+| `<F2>` | Trigger suggestions (after enabling) |
 | `<C-y>` | Accept suggestion |
 | `<C-w>` | Accept word |
 | `<C-l>` | Accept line |
 | `<ESC>` | Dismiss |
-| `\cpe/\cpd/\cps` | Enable/Disable/Status |
+| `\cpd/\cps` | Disable/Status |
 
 ### Navigation
 | Key | Action |
